@@ -57,8 +57,8 @@ function Airplane(name) {
   }
  
 const person1 = new Person('Tony', 28);
-console.log("person1",person1);
-console.log("toString method",person1.toString());
+// console.log("person1",person1);
+// console.log("toString method",person1.toString());
 
 // testing .eat(food) method
 // Breakfast
@@ -138,16 +138,16 @@ person1.poop();
   }
 
   const baby1 = new Baby ("Jasper", "10months", "hot wheels");
-  console.log(baby1);  // Person { name: 'Jasper', age: '10months', stomach: [], favoriteToy: 'hot wheels' }
-  console.log(baby1.play()); // Playing with hot wheels
+  // console.log(baby1);  // Person { name: 'Jasper', age: '10months', stomach: [], favoriteToy: 'hot wheels' }
+  // console.log(baby1.play()); // Playing with hot wheels
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Window Binding: 'this' keyword used in the global scope, not in a declared object
+    2. Implicit Binding: 'this' keyword used to refer to the name of a declared object
+    3. New Binding: creating another object based off of 'this'(from constructor functions), using the 'new' keyword
+    4. Explicit Binding: 'this' defined clearly, using call() and apply() methods
   */
   
   
