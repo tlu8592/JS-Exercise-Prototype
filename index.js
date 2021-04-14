@@ -60,15 +60,32 @@ const person1 = new Person('Tony', 28);
 console.log("person1",person1);
 console.log("toString method",person1.toString());
 
-// test .eat(food) method
+// testing .eat(food) method
 // Breakfast
 person1.eat('eggs');
 person1.eat('oatmeal');
 person1.eat('sausages');
+// console.log(person1.stomach); // [ 'eggs', 'oatmeal', 'sausages' ]
+
+// additional foods to test effect for full stomach
+// Lunch
+person1.eat('steak');
+person1.eat('garden salad');
+person1.eat('potatoes');
+person1.eat('squash');
+// Dinner
+person1.eat('breadsticks');
+person1.eat('minestrone');
+person1.eat('spaghetti');
+person1.eat('pizza');
+// Dessert
+person1.eat('cheesecake');
+
+// console.log(person1.stomach) // 'cheesecake' not added
 
 // test .poop() method
 person1.poop();
-console.log(person1.stomach);
+// console.log(person1.stomach); // []
   
   /*
     TASK 2
@@ -110,10 +127,19 @@ console.log(person1.stomach);
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age);
+   this.favoriteToy = favoriteToy;
   }
  
+  Baby.prototype = Object.create(Person.prototype);
+  Baby.prototype.play = function() {
+    return `Playing with ${this.favoriteToy}`;
+  }
+
+  const baby1 = new Baby ("Jasper", "10months", "hot wheels");
+  console.log(baby1);  // Person { name: 'Jasper', age: '10months', stomach: [], favoriteToy: 'hot wheels' }
+  console.log(baby1.play()); // Playing with hot wheels
   
   /* 
     TASK 4
